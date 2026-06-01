@@ -3,7 +3,7 @@
 -- =================================================================
 
 -- 1. เรียกใช้งานหน้าตาเมนูหลัก (Fluent UI Library)
-local Fluent = loadstring(game:HttpGet("https://githubusercontent.com"))();
+local Fluent = loadstring(game:HttpGet("https://raw.githubusercontent.com/dawid-scripts/Fluent/master/main.lua"))();
 
 -- 2. สร้างหน้าต่างเมนูหลักของค่ายคุณ
 local Window = Fluent:CreateWindow({
