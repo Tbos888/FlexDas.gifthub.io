@@ -1,4 +1,18 @@
 local HttpService = game:GetService("HttpService")
+local url = "https://raw.githubusercontent.com/Tbos888/FlexDas.github.io/refs/heads/main/bloxfruit.lua"
+
+local success, result = pcall(function()
+    return game:HttpGet(url)
+end)
+
+if not success then
+    print("❌ Executor ของคุณใช้ game:HttpGet ไม่ได้! ปัญหาเกิดจากตัวรัน")
+    warn("Error: " .. tostring(result))
+elseif result == "" or result:find("404") then
+    print("❌ เจอลิงก์ แต่ลิงก์พัง (Error 404)! แสดงว่าพิมพ์ชื่อไฟล์หรือชื่อโฟลเดอร์บน GitHub ผิด")
+else
+    print("✅ ดึงโค้ดสำเร็จ! ไม่มีปัญหาเรื่องลิงก์")
+end
 local v14;
 
 local success, result = pcall(function()
