@@ -1,67 +1,39 @@
-local HttpService = game:GetService("HttpService")
-local url = "https://raw.githubusercontent.com/Tbos888/FlexDas.github.io/refs/heads/main/bloxfruit.lua"
+-- =================================================================
+--                     FLEXDAS HUB (MAIN SCRIPT)
+-- =================================================================
 
-local success, result = pcall(function()
-    return game:HttpGet(url)
-end)
-
-if not success then
-    print("❌ Executor ของคุณใช้ game:HttpGet ไม่ได้! ปัญหาเกิดจากตัวรัน")
-    warn("Error: " .. tostring(result))
-elseif result == "" or result:find("404") then
-    print("❌ เจอลิงก์ แต่ลิงก์พัง (Error 404)! แสดงว่าพิมพ์ชื่อไฟล์หรือชื่อโฟลเดอร์บน GitHub ผิด")
-else
-    print("✅ ดึงโค้ดสำเร็จ! ไม่มีปัญหาเรื่องลิงก์")
-end
-local v14;
-
-local success, result = pcall(function()
-    return request({
-        Url = "https://githubusercontent.com",
-        Method = "GET"
-    }).Body
-end)
-
-if success and result then
-    v14 = loadstring(result)()
-else
-    -- หากยังดึงไม่ได้ ให้ใช้คำสั่งดึงข้อมูลมาตรฐานของตัวรันตัวอื่น
-    v14 = loadstring(game:HttpGetAsync("https://githubusercontent.com"))()
-end
+-- 1. เรียกใช้งานหน้าตาเมนูหลัก (Fluent UI Library)
+local Fluent = loadstring(game:HttpGet("https://githubusercontent.com"))();
 
 -- 2. สร้างหน้าต่างเมนูหลักของค่ายคุณ
-local v15 = v14:CreateWindow({
+local Window = Fluent:CreateWindow({
     Title = "FlexDas Hub",
     SubTitle = "Blox Fruits",
     TabWidth = 160,
-    Theme = "Dark",
+    Theme = "Dark", -- สีดาร์กโหมดสุดเท่
     Acrylic = false,
     Size = UDim2.fromOffset(580, 460),
     MinimizeKey = Enum.KeyCode.End
 });
 
--- 3. สร้างแท็บเมนูย่อยหน้าแรก
-local v16 = {
-    Home = v15:AddTab({
-        Title = "Thong Tin",
-        Icon = "info" 
-    }),
-    Main = v15:AddTab({
-        Title = "ฟังก์ชันหลัก",
-        Icon = "sword" 
-    })
+-- 3. สร้างแท็บเมนูย่อยหน้าแรก (หน้าต้อนรับ / ข้อมูล)
+local Tabs = {
+    Home = Window:AddTab({ Title = "ข้อมูลทั่วไป", Icon = "info" }),
+    Main = Window:AddTab({ Title = "ฟังก์ชันหลัก", Icon = "sword" })
 };
 
-v14:Notify({
+-- แสดงข้อความแจ้งเตือนสีเขียวมุมจอเมื่อเปิดสคริปต์สำเร็จ
+Fluent:Notify({
     Title = "FlexDas Hub",
     Content = "สคริปต์เปิดใช้งานสำเร็จแล้ว!",
     Duration = 5
-});
+})
 
-v16.Home:AddParagraph({
+-- ข้อความจำลองหน้าแรก
+Tabs.Home:AddParagraph({
     Title = "ยินดีต้อนรับสู่ FlexDas Hub",
-    Content = "สคริปต์นี้ได้รับการจัดการระบบโดย FlexDas"
-});
+    Content = "สคริปต์เวอร์ชันดัดแปลงและพัฒนาโดย FlexDas"
+})
 local v9 = CreateObject("TextLabel", {
     Name = "Top",
     TextTransparency = 1,
