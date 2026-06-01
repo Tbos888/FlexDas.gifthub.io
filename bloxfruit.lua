@@ -1,7 +1,3 @@
--- =================================================================
---                     FLEXDAS HUB (MAIN SCRIPT)
--- =================================================================
-
 local Fluent = loadstring(game:HttpGet("https://raw.githubusercontent.com/dawid-scripts/Fluent/master/main.lua"))();
 
 local Window = Fluent:CreateWindow({
