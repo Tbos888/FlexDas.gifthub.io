@@ -1,24 +1,44 @@
+-- =================================================================
+--                     FLEXDAS HUB (MAIN SCRIPT)
+-- =================================================================
+
+-- 1. เรียกใช้งานหน้าตาเมนูหลัก (Fluent UI Library) แก้ไขลิงก์ถูกต้องแล้ว
 local v14 = loadstring(game:HttpGet("https://githubusercontent.com"))();
 
+-- 2. สร้างหน้าต่างเมนูหลักของค่ายคุณ
 local v15 = v14:CreateWindow({
     Title = "FlexDas Hub",
     SubTitle = "Blox Fruits",
     TabWidth = 160,
-    Theme = "Dark",
+    Theme = "Dark", -- สีดาร์กโหมด
     Acrylic = false,
     Size = UDim2.fromOffset(580, 460),
     MinimizeKey = Enum.KeyCode.End
 });
+
+-- 3. สร้างแท็บเมนูย่อยหน้าแรก
 local v16 = {
     Home = v15:AddTab({
         Title = "Thong Tin",
-        Icon = ""
+        Icon = "info" -- ใส่ไอคอนรูปข้อมูลให้สวยงาม
+    }),
+    Main = v15:AddTab({
+        Title = "ฟังก์ชันหลัก",
+        Icon = "sword" -- แท็บรองรับสำหรับทำระบบฟาร์มต่อ
     })
 };
+
+-- แจ้งเตือนเมื่อสคริปต์รันสำเร็จ
 v14:Notify({
     Title = "FlexDas Hub",
     Content = "สคริปต์เปิดใช้งานสำเร็จแล้ว!",
     Duration = 5
+});
+
+-- ใส่เนื้อหาทักทายในหน้าแรก (Thong Tin)
+v16.Home:AddParagraph({
+    Title = "ยินดีต้อนรับสู่ FlexDas Hub",
+    Content = "สคริปต์นี้ได้รับการจัดการระบบโดย FlexDas"
 });
 local v9 = CreateObject("TextLabel", {
     Name = "Top",
