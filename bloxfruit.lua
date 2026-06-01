@@ -2,38 +2,34 @@
 --                     FLEXDAS HUB (MAIN SCRIPT)
 -- =================================================================
 
--- 1. เรียกใช้งานหน้าตาเมนูหลัก (Fluent UI Library)
 local Fluent = loadstring(game:HttpGet("https://raw.githubusercontent.com/dawid-scripts/Fluent/master/main.lua"))();
 
--- 2. สร้างหน้าต่างเมนูหลักของค่ายคุณ
 local Window = Fluent:CreateWindow({
     Title = "FlexDas Hub",
     SubTitle = "Blox Fruits",
     TabWidth = 160,
-    Theme = "Dark", -- สีดาร์กโหมดสุดเท่
+    Theme = "Dark",
     Acrylic = false,
     Size = UDim2.fromOffset(580, 460),
     MinimizeKey = Enum.KeyCode.End
 });
 
--- 3. สร้างแท็บเมนูย่อยหน้าแรก (หน้าต้อนรับ / ข้อมูล)
 local Tabs = {
     Home = Window:AddTab({ Title = "ข้อมูลทั่วไป", Icon = "info" }),
     Main = Window:AddTab({ Title = "ฟังก์ชันหลัก", Icon = "sword" })
 };
 
--- แสดงข้อความแจ้งเตือนสีเขียวมุมจอเมื่อเปิดสคริปต์สำเร็จ
 Fluent:Notify({
     Title = "FlexDas Hub",
     Content = "สคริปต์เปิดใช้งานสำเร็จแล้ว!",
     Duration = 5
 })
 
--- ข้อความจำลองหน้าแรก
 Tabs.Home:AddParagraph({
     Title = "ยินดีต้อนรับสู่ FlexDas Hub",
     Content = "สคริปต์เวอร์ชันดัดแปลงและพัฒนาโดย FlexDas"
 })
+
 local v9 = CreateObject("TextLabel", {
     Name = "Top",
     TextTransparency = 1,
