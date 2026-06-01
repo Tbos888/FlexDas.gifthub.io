@@ -306,16 +306,28 @@ v5:Destroy();
 --         pcall(v422);
 --     end
 -- end);
-local v14 = loadstring(game:HttpGet("https://raw.githubusercontent.com/obfalchx/testfluent/refs/heads/main/FluentTrau"))();
+
+local v14 = loadstring(game:HttpGet("https://github.com"))();
+
 local v15 = v14:CreateWindow({
-    Title = "Min Gaming",
-    SubTitle = "",
+    Title = "FlexDas Hub",
+    SubTitle = "Blox Fruits",
     TabWidth = 160,
-    Theme = "Light",
+    Theme = "Dark",
     Acrylic = false,
-    Size = UDim2.fromOffset(500, 320),
+    Size = UDim2.fromOffset(580, 460),
     MinimizeKey = Enum.KeyCode.End
 });
+
+local v16 = {
+    Home = v15:AddTab({
+        Title = "Thong Tin",
+        Icon = ""
+    })
+};
+local v16 = 
+    Home = v15:AddTab
+
 local v16 = {
     Home = v15:AddTab({
         Title = "Thông Tin"
