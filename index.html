@@ -118,7 +118,6 @@
             align-items: center;
         }
 
-        /* โลโก้วงกลมเรืองแสงตามแบนเนอร์ */
         .logo-container {
             display: flex;
             align-items: center;
@@ -187,13 +186,11 @@
             justify-content: center;
             align-items: center;
             text-align: center;
-            /* ไล่เฉดสีเพื่อสร้างคลื่นมิติแบบแบนเนอร์ */
             background: radial-gradient(circle at 50% 50%, #151515 0%, #030303 100%);
             border-bottom: 1px solid var(--color-border);
             overflow: hidden;
         }
 
-        /* คลื่นแสงจางๆ ด้านหลัง */
         .hero-wave-overlay {
             position: absolute;
             top: 0;
@@ -210,20 +207,17 @@
             letter-spacing: 6px;
             margin-bottom: 15px;
             font-weight: 400;
-            animation: fadeIn 1.5s ease-out;
         }
 
-        /* จุดที่ปรับปรุงสไตล์ของข้อความรายละเอียดในหน้าแรก */
         .hero-content p {
-            font-family: 'Inter', sans-serif; /* เปลี่ยนมาใช้ Inter เพื่อให้อ่านภาษาไทยง่ายและเป็นระเบียบ */
+            font-family: 'Inter', sans-serif;
             font-size: clamp(13px, 2vw, 15px);
             color: var(--text-secondary);
-            letter-spacing: normal; /* แก้ไขจาก 8px เป็น normal เพื่อให้ตัวอักษรชิดกันเป็นระเบียบ */
+            letter-spacing: normal;
             margin-bottom: 40px;
             animation: fadeIn 2s ease-out;
         }
 
-        /* ส่วนจัดวางและแอนิเมชันของปุ่มลูกศรเลื่อนลง */
         .scroll-down {
             position: absolute;
             bottom: 30px;
@@ -244,19 +238,14 @@
             transition: stroke var(--transition-speed);
         }
 
-        /* เมื่อเอาเมาส์มาชี้ ลูกศรจะเรืองแสงสีขาวสว่างขึ้น */
         .scroll-down a:hover svg path {
             stroke: var(--text-primary);
             filter: drop-shadow(0 0 5px rgba(255, 255, 255, 0.8));
         }
 
         @keyframes bounce-arrow {
-            0%, 100% {
-                transform: translateY(0);
-            }
-            50% {
-                transform: translateY(8px);
-            }
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(8px); }
         }
 
         /* ----------------------------------
@@ -392,7 +381,178 @@
         }
 
         /* ----------------------------------
-           7. CONTACT (Discord Redirect Panel)
+           7. PORTFOLIO SECTION (คุมโทน ขาว เทา ดำ)
+        ------------------------------------- */
+        .portfolio {
+            padding: 100px 0;
+            background-color: var(--color-surface-1);
+            border-bottom: 1px solid var(--color-border);
+        }
+
+        .filter-container {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin-bottom: 50px;
+        }
+
+        .filter-btn {
+            background: transparent;
+            color: var(--text-secondary);
+            border: 1px solid var(--color-border);
+            padding: 10px 24px;
+            font-size: 12px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 2.5px;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: all var(--transition-speed);
+        }
+
+        .filter-btn.active, .filter-btn:hover {
+            color: var(--text-primary);
+            border-color: var(--color-border-active);
+            background-color: rgba(255, 255, 255, 0.05);
+            box-shadow: var(--glow-white);
+        }
+
+        .portfolio-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 30px;
+        }
+
+        .portfolio-card {
+            background-color: var(--color-surface-2);
+            border: 1px solid var(--color-border);
+            border-radius: 6px;
+            overflow: hidden;
+            transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+            opacity: 1;
+            transform: scale(1);
+        }
+
+        .portfolio-card.hidden-card {
+            opacity: 0;
+            transform: scale(0.9);
+            display: none !important;
+        }
+
+        .portfolio-card:hover {
+            transform: translateY(-8px);
+            border-color: var(--color-border-active);
+            box-shadow: 0 15px 35px rgba(255, 255, 255, 0.05);
+        }
+
+        .portfolio-mockup {
+            height: 220px; 
+            background-color: #030303;
+            border-bottom: 1px solid var(--color-border);
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .portfolio-mockup::after {
+            content: '';
+            position: absolute;
+            width: 150px;
+            height: 150px;
+            background-color: rgba(255, 255, 255, 0.04);
+            filter: blur(50px);
+            border-radius: 50%;
+            pointer-events: none;
+        }
+
+        .portfolio-info {
+            padding: 30px 24px;
+        }
+
+        .portfolio-tag {
+            display: inline-block;
+            font-size: 10px;
+            font-weight: 700;
+            letter-spacing: 1.5px;
+            color: var(--text-secondary);
+            text-transform: uppercase;
+            margin-bottom: 10px;
+        }
+
+        .portfolio-info h3 {
+            font-family: 'Cinzel', serif;
+            font-size: 18px;
+            letter-spacing: 1.5px;
+            margin-bottom: 12px;
+        }
+
+        .portfolio-info p {
+            color: var(--text-secondary);
+            font-size: 13px;
+            font-weight: 300;
+            margin-bottom: 20px;
+            min-height: 40px;
+        }
+
+        .portfolio-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            color: var(--text-primary);
+            text-decoration: none;
+            font-size: 11px;
+            font-weight: 600;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            border-bottom: 1px solid var(--text-primary);
+            padding-bottom: 4px;
+            transition: all var(--transition-speed);
+        }
+
+        .portfolio-link:hover {
+            color: var(--text-secondary);
+            padding-left: 5px;
+            border-bottom-color: var(--text-secondary);
+        }
+
+        .mock-browser {
+            width: 90%; 
+            height: 150px; 
+            background-color: #0b0b0f;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            border-radius: 4px;
+            padding: 8px;
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+        .mock-browser-header {
+            display: flex;
+            gap: 4px;
+        }
+        .mock-dot {
+            width: 6px;
+            height: 6px;
+            border-radius: 50%;
+        }
+        .mock-browser-content {
+            flex-grow: 1;
+            border: 1px dashed rgba(255, 255, 255, 0.1);
+            border-radius: 3px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            font-size: 10px;
+            color: #555555;
+            font-family: monospace;
+        }
+
+        /* ----------------------------------
+           8. CONTACT (Discord Redirect Panel)
         ------------------------------------- */
         .contact {
             padding: 120px 0;
@@ -425,7 +585,7 @@
         }
 
         /* ----------------------------------
-           8. ANIMATIONS & FOOTER
+           9. ANIMATIONS & FOOTER
         ------------------------------------- */
         @keyframes fadeIn {
             from { opacity: 0; transform: translateY(20px); }
@@ -460,6 +620,7 @@
                     <li><a href="#">หน้าแรก</a></li>
                     <li><a href="#about">ผู้พัฒนา</a></li>
                     <li><a href="#services">บริการของเรา</a></li>
+                    <li><a href="#portfolio">ผลงาน</a></li>
                     <li><a href="#contact">ติดต่อเรา</a></li>
                 </ul>
             </nav>
@@ -473,14 +634,13 @@
             <div class="hero-content">
                 <h2>WELCOME TO FLEXDAS</h2>
                 <p>รับพัฒนาเว็บไซต์ ระบบจัดการข้อมูล และ DISCORD BOT พร้อมออกแบบโซลูชันเฉพาะทางสำหรับธุรกิจและชุมชน เริ่มต้น 350 บาท</p>
-                <!-- https://discord.gg/yFmrzhwYwQ ได้เลยครับ -->
                 <a href="https://discord.gg/yFmrzhwYwQ" target="_blank" class="btn-discord">
                     <i class="fab fa-discord"></i> JOIN DISCORD SERVER
                 </a>
             </div>
         </div>
         
-        <!-- แทรกปุ่มลูกศรเลื่อนลง (Scroll Down Arrow) -->
+        <!-- ปุ่มลูกศรเลื่อนลง -->
         <div class="scroll-down">
             <a href="#about" aria-label="เลื่อนลงเพื่อดูส่วนข้อมูลผู้พัฒนา">
                 <svg width="32" height="32" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -544,13 +704,106 @@
         </div>
     </section>
 
-    <!-- 5. CONTACT (DISCORD ONLY) -->
+    <!-- 5. PORTFOLIO SECTION -->
+    <section class="portfolio" id="portfolio">
+        <div class="container">
+            <h2 class="section-title">OUR PORTFOLIO</h2>
+            
+            <!-- แถบเลือกสลับหมวดหมู่ -->
+            <div class="filter-container">
+                <button class="filter-btn active" data-filter="all">ทั้งหมด</button>
+                <button class="filter-btn" data-filter="web">เว็บไซต์</button>
+                <button class="filter-btn" data-filter="bot">บอทดิสคอร์ด</button>
+                <button class="filter-btn" data-filter="system">ระบบข้อมูล</button>
+            </div>
+
+            <!-- รายการการ์ดแสดงผลงาน -->
+            <div class="portfolio-grid">
+                
+                <!-- ผลงานที่ 1: เว็บไซต์ (ใส่รูปภาพสัดส่วนใหม่ที่ขยายขนาดกรอบรองรับแล้ว) -->
+                <div class="portfolio-card" data-category="web">
+                    <div class="portfolio-mockup">
+                        <div class="mock-browser">
+                            <div class="mock-browser-header">
+                                <span class="mock-dot" style="background-color: #555555;"></span>
+                                <span class="mock-dot" style="background-color: #555555;"></span>
+                                <span class="mock-dot" style="background-color: #555555;"></span>
+                            </div>
+                            <div class="mock-browser-content" style="border: none; padding: 0; overflow: hidden;">
+                                <img src="https://cdn.discordapp.com/attachments/1510475926591242390/1511443839364366478/image.png?ex=6a207944&is=6a1f27c4&hm=1f535b447d3f61c7c7f5155eb5977ce00dfffa7216599201fb97a6453687a69b&" style="width: 100%; height: 100%; object-fit: cover; object-position: top;" alt="ตัวอย่างผลงานเว็บไซต์">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="portfolio-info">
+                        <span class="portfolio-tag">Web Development</span>
+                        <h3>FLEXDAS MARKET WEB</h3>
+                        <p>บริการเขียนเว็บร้านค้ารองรับระบบมือถืออย่างสมบูรณ์แบบ จัดแบ่งประเภทสินค้าและบริการหลังการขายอย่างเป็นระบบ</p>
+                        <a href="https://discord.gg/yFmrzhwYwQ" target="_blank" class="portfolio-link">
+                            ดูข้อมูลเพิ่มเติม <i class="fa-solid fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- ผลงานที่ 2: บอทดิสคอร์ด (ติดตั้งรูปกราฟิกจำลองการทำงานของบอท FlexDas แท้จริงแบบเรียลไทม์) -->
+                <div class="portfolio-card" data-category="bot">
+                    <div class="portfolio-mockup">
+                        <div class="mock-browser">
+                            <div class="mock-browser-header">
+                                <span class="mock-dot" style="background-color: #555555;"></span>
+                                <span class="mock-dot" style="background-color: #555555;"></span>
+                                <span class="mock-dot" style="background-color: #555555;"></span>
+                            </div>
+                            <!-- ⚙️ อัปเดตรูปบอทดิสคอร์ดเป็นภาพจำลองการแจ้งโอนสำเร็จของ FlexDas Bot ในกรอบ Discord เรียบร้อยครับ -->
+                            <div class="mock-browser-content" style="border: none; padding: 0; overflow: hidden;">
+                                <img src="data:image/svg+xml;utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 150' width='400' height='150'%3E%3Crect width='100%25' height='100%25' fill='%231e1f22'/%3E%3Ccircle cx='28' cy='28' r='16' fill='%230c0c0f' stroke='%238a8a8a' stroke-width='1.5'/%3E%3Ctext x='28' y='32' font-family='sans-serif' font-size='10' font-weight='bold' fill='%23ffffff' text-anchor='middle'%3EFD%3C/text%3E%3Ctext x='52' y='24' font-family='sans-serif' font-size='12' font-weight='bold' fill='%23ffffff'%3EFlexDas Bot%3C/text%3E%3Crect x='126' y='14' width='26' height='12' rx='2' fill='%235865f2'/%3E%3Ctext x='139' y='23' font-family='sans-serif' font-size='8' font-weight='bold' fill='%23ffffff' text-anchor='middle'%3EBOT%3C/text%3E%3Ctext x='160' y='23' font-family='sans-serif' font-size='10' fill='%23949ba4'%3EToday%3C/text%3E%3Crect x='52' y='36' width='330' height='100' rx='3' fill='%232b2d31'/%3E%3Cpath d='M52 36 h 4 v 100 h -4 z' fill='%23248046'/%3E%3Ctext x='68' y='52' font-family='sans-serif' font-size='8' font-weight='bold' fill='%23248046' letter-spacing='1'%3EAUTOMATIC TRANSFER SUCCESS%3C/text%3E%3Ctext x='68' y='68' font-family='sans-serif' font-size='11' font-weight='bold' fill='%23ffffff'%3E💸 โอนเงินสำเร็จแล้ว (Auto-Pay)%3C/text%3E%3Ctext x='68' y='88' font-family='sans-serif' font-size='8' fill='%23949ba4'%3EMEMBER%3C/text%3E%3Ctext x='68' y='102' font-family='sans-serif' font-size='10' font-weight='bold' fill='%23ffffff'%3E@Mokro%3C/text%3E%3Ctext x='170' y='88' font-family='sans-serif' font-size='8' fill='%23949ba4'%3EAMOUNT%3C/text%3E%3Ctext x='170' y='102' font-family='sans-serif' font-size='11' font-weight='bold' fill='%23248046'%3E150.00 THB%3C/text%3E%3Ctext x='270' y='88' font-family='sans-serif' font-size='8' fill='%23949ba4'%3ESTATUS%3C/text%3E%3Ctext x='270' y='102' font-family='sans-serif' font-size='10' font-weight='bold' fill='%23248046'%3ESUCCESS 🟢%3C/text%3E%3Cline x1='68' y1='114' x2='368' y2='114' stroke='%233f4248' stroke-width='0.5'/%3E%3Ctext x='68' y='126' font-family='sans-serif' font-size='8' fill='%23949ba4'%3EFLEXDAS AUTO-GATEWAY • VERIFIED%3C/text%3E%3C/svg%3E" style="width: 100%; height: 100%; object-fit: cover; object-position: top;" alt="ตัวอย่างผลงานบอทดิสคอร์ด">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="portfolio-info">
+                        <span class="portfolio-tag">Discord Bot</span>
+                        <h3>FLEXDAS MULTIPURPOSE BOT</h3>
+                        <p>บอทอเนกประสงค์สำหรับเซิร์ฟเวอร์ดิสคอร์ด จัดระบบร้านค้า ตรวจสอบการโอนเงิน ตลอดจนดูแลลูกค้าอัตโนมัติแบบ 24/7</p>
+                        <a href="https://discord.gg/yFmrzhwYwQ" target="_blank" class="portfolio-link">
+                            ดูข้อมูลเพิ่มเติม <i class="fa-solid fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- ผลงานที่ 3: ระบบหลังบ้าน (ติดตั้งรูปกราฟิกจำลองการบันทึกข้อมูล Query และ Console Log ของเซิร์ฟเวอร์) -->
+                <div class="portfolio-card" data-category="system">
+                    <div class="portfolio-mockup">
+                        <div class="mock-browser">
+                            <div class="mock-browser-header">
+                                <span class="mock-dot" style="background-color: #555555;"></span>
+                                <span class="mock-dot" style="background-color: #555555;"></span>
+                                <span class="mock-dot" style="background-color: #555555;"></span>
+                            </div>
+                            <!-- ⚙️ อัปเดตรูปหน้าจอการประมวลผลข้อมูลหลังบ้านจำลองที่สอดคล้องกับคอร์ระบบความปลอดภัยเรียบร้อยครับ -->
+                            <div class="mock-browser-content" style="border: none; padding: 0; overflow: hidden;">
+                                <img src="data:image/svg+xml;utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 150' width='400' height='150'%3E%3Crect width='100%25' height='100%25' fill='%230c0c12'/%3E%3Ctext x='20' y='25' font-family='monospace' font-size='10' fill='%238a8a8a'%3E%5BSystem%5D Connecting to MongoDB Database...%3C/text%3E%3Ctext x='20' y='42' font-family='monospace' font-size='10' fill='%23248046'%3E%5BDatabase%5D Connection established successfully.%3C/text%3E%3Ctext x='20' y='59' font-family='monospace' font-size='10' fill='%23ffffff'%3E%5BQuery%5D SELECT * FROM transactions WHERE status = 'pending'%3C/text%3E%3Ctext x='20' y='76' font-family='monospace' font-size='10' fill='%238a8a8a'%3E%5BQuery%5D Found 1 pending transaction. ID: TXN_9824%3C/text%3E%3Ctext x='20' y='93' font-family='monospace' font-size='10' fill='%23ffffff'%3E%5BProcess%5D Executing automatic transfer for Mokro...%3C/text%3E%3Ctext x='20' y='110' font-family='monospace' font-size='10' fill='%23248046'%3E%5BSuccess%5D Transfer of 150.00 THB verified and logged.%3C/text%3E%3Ctext x='20' y='127' font-family='monospace' font-size='10' fill='%238a8a8a'%3E%5BSystem%5D Memory utilization: 14.2%25 | Uptime: 724h%3C/text%3E%3C/svg%3E" style="width: 100%; height: 100%; object-fit: cover; object-position: top;" alt="ตัวอย่างผลงานระบบฐานข้อมูล">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="portfolio-info">
+                        <span class="portfolio-tag">Database & System</span>
+                        <h3>BACKEND & TRANSACTION SYSTEM</h3>
+                        <p>ระบบรันหลังบ้านเพื่อเชื่อมต่อกับฐานข้อมูล ตรวจสอบสถานะการเติมเงิน และตัดบัญชีแบบเรียลไทม์ที่เน้นความปลอดภัยสูงสุด</p>
+                        <a href="https://discord.gg/yFmrzhwYwQ" target="_blank" class="portfolio-link">
+                            ดูข้อมูลเพิ่มเติม <i class="fa-solid fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- 6. CONTACT (DISCORD ONLY) -->
     <section class="contact" id="contact">
         <div class="container">
             <div class="contact-box">
                 <h3>READY TO COLLABORATE?</h3>
                 <p>ต้องการจ้างงานพัฒนาเว็บไซต์ ซื้อขายรหัสเกม หรือเข้ามาพูดคุยสอบถามปัญหาต่างๆ สามารถกดปุ่มด้านล่างเพื่อเข้าสู่ Discord Server ได้ทันทีครับ</p>
-                <!-- ใส่ลิงก์ Discord Server ของคุณใน href เช่นเดียวกันครับ -->
                 <a href="https://discord.gg/yFmrzhwYwQ" target="_blank" class="btn-discord">
                     <i class="fab fa-discord"></i> ENTER DISCORD SERVER
                 </a>
@@ -558,12 +811,39 @@
         </div>
     </section>
 
-    <!-- 6. FOOTER -->
+    <!-- 7. FOOTER -->
     <footer>
         <div class="container">
             <p>&copy; 2026 FLEXDAS. FlexDas BY Tbos.</p>
         </div>
     </footer>
+
+    <!-- 8. JAVASCRIPT สำหรับทำงานกับปุ่มสลับประเภทผลงาน -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const filterButtons = document.querySelectorAll('.filter-btn');
+            const cards = document.querySelectorAll('.portfolio-card');
+
+            filterButtons.forEach(button => {
+                button.addEventListener('click', () => {
+                    filterButtons.forEach(btn => btn.classList.remove('active'));
+                    button.classList.add('active');
+
+                    const filterValue = button.getAttribute('data-filter');
+
+                    cards.forEach(card => {
+                        const cardCategory = card.getAttribute('data-category');
+
+                        if (filterValue === 'all' || cardCategory === filterValue) {
+                            card.classList.remove('hidden-card');
+                        } else {
+                            card.classList.add('hidden-card');
+                        }
+                    });
+                });
+            });
+        });
+    </script>
 
 </body>
 </html>
