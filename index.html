@@ -381,7 +381,60 @@
         }
 
         /* ----------------------------------
-           7. PORTFOLIO SECTION (คุมโทน ขาว เทา ดำ)
+           7. WHY CHOOSE US SECTION (ปรับปรุงใหม่เพื่อความพรีเมียม)
+        ------------------------------------- */
+        .why-us {
+            padding: 100px 0;
+            background-color: var(--color-surface-2);
+            border-bottom: 1px solid var(--color-border);
+        }
+
+        .why-us-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+        }
+
+        .why-us-card {
+            background-color: var(--color-surface-1);
+            border: 1px solid var(--color-border);
+            padding: 40px 25px;
+            border-radius: 6px;
+            text-align: center;
+            transition: all var(--transition-speed) ease;
+            position: relative;
+        }
+
+        .why-us-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--color-border-active);
+            box-shadow: var(--glow-white);
+        }
+
+        .why-us-icon {
+            font-size: 32px;
+            color: var(--text-primary);
+            margin-bottom: 22px;
+            filter: drop-shadow(0 0 8px rgba(255, 255, 255, 0.3));
+        }
+
+        .why-us-card h3 {
+            font-family: 'Cinzel', serif;
+            font-size: 16px;
+            letter-spacing: 1.5px;
+            margin-bottom: 12px;
+            color: var(--text-primary);
+        }
+
+        .why-us-card p {
+            color: var(--text-secondary);
+            font-size: 13px;
+            line-height: 1.6;
+            font-weight: 300;
+        }
+
+        /* ----------------------------------
+           8. PORTFOLIO SECTION (คุมโทน ขาว เทา ดำ)
         ------------------------------------- */
         .portfolio {
             padding: 100px 0;
@@ -552,7 +605,7 @@
         }
 
         /* ----------------------------------
-           8. CONTACT (Discord Redirect Panel)
+           9. CONTACT (Discord Redirect Panel)
         ------------------------------------- */
         .contact {
             padding: 120px 0;
@@ -585,7 +638,7 @@
         }
 
         /* ----------------------------------
-           9. ANIMATIONS & FOOTER
+           10. ANIMATIONS & FOOTER
         ------------------------------------- */
         @keyframes fadeIn {
             from { opacity: 0; transform: translateY(20px); }
@@ -620,6 +673,7 @@
                     <li><a href="#">หน้าแรก</a></li>
                     <li><a href="#about">ผู้พัฒนา</a></li>
                     <li><a href="#services">บริการของเรา</a></li>
+                    <li><a href="#why-us">ทำไมต้องเลือกเรา</a></li>
                     <li><a href="#portfolio">ผลงาน</a></li>
                     <li><a href="#contact">ติดต่อเรา</a></li>
                 </ul>
@@ -698,13 +752,47 @@
                 <div class="card">
                     <div class="card-icon"><i class="fa-solid fa-shield-halved"></i></div>
                     <h3>GAME ACCOUNT MARKET</h3>
-                    <p>บริการจัดหารหัสเกมคุณภาพเยี่ยม ปลอดภัย มั่นใจได้ในมาตรฐานความปลอดภัย ภายใต้การควบคุมและดูแลโดย Tbos FLexDas</p>
+                    <p>บริการจัดหารรหัสเกมคุณภาพเยี่ยม ปลอดภัย มั่นใจได้ในมาตรฐานความปลอดภัย ภายใต้การควบคุมและดูแลโดย Tbos FLexDas</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- 5. PORTFOLIO SECTION -->
+    <!-- 5. NEW: WHY CHOOSE US SECTION
+     (ทำไมต้องเลือกเรา) (ทำไมต้องเลือกเรา) -->
+    <section class="why-us" id="why-us">
+        <div class="container">
+            <h2 class="section-title">WHY CHOOSE US</h2>
+            <div class="why-us-grid">
+                <!-- Card 1 -->
+                <div class="why-us-card">
+                    <div class="why-us-icon"><i class="fa-solid fa-tags"></i></div>
+                    <h3>เริ่มต้นเพียง 350 บาท</h3>
+                    <p>ให้คุณมีระบบหรือเว็บไซต์ระดับมืออาชีพได้ในราคาที่เข้าถึงง่าย คุ้มค่าที่สุดสำหรับผู้เริ่มต้น ชุมชน และธุรกิจขนาดเล็ก</p>
+                </div>
+                <!-- Card 2 -->
+                <div class="why-us-card">
+                    <div class="why-us-icon"><i class="fa-solid fa-wand-magic-sparkles"></i></div>
+                    <h3>ดีไซน์พรีเมียมเฉพาะคุณ</h3>
+                    <p>ไม่ใช่แค่การใช้เทมเพลตทั่วไป แต่เราออกแบบโครงสร้างและหน้าตาเว็บใหม่ทั้งหมดให้ตอบโจทย์ภาพลักษณ์เฉพาะแบรนด์ของคุณ</p>
+                </div>
+                <!-- Card 3 -->
+                <div class="why-us-card">
+                    <div class="why-us-icon"><i class="fa-solid fa-cubes"></i></div>
+                    <h3>เชื่อมระบบครบวงจร</h3>
+                    <p>เชื่อมโยงเว็บไซต์ เข้ากับฐานข้อมูลหลังบ้าน และ Discord Bot ได้อย่างลื่นไหล มอบประสบการณ์การจัดการระบบที่สะดวกในที่เดียว</p>
+                </div>
+                <!-- Card 4 -->
+                <div class="why-us-card">
+                    <div class="why-us-icon"><i class="fa-solid fa-comments"></i></div>
+                    <h3>ดูแลใกล้ชิดผ่าน Discord</h3>
+                    <p>เราเน้นการทำงานและสื่อสารที่รวดเร็ว คุณสามารถเข้ามาอัปเดตและติดตามผลงานได้ตลอดผ่านทาง Discord Server ของเรา</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 6. PORTFOLIO SECTION -->
     <section class="portfolio" id="portfolio">
         <div class="container">
             <h2 class="section-title">OUR PORTFOLIO</h2>
@@ -720,7 +808,7 @@
             <!-- รายการการ์ดแสดงผลงาน -->
             <div class="portfolio-grid">
                 
-                <!-- ผลงานที่ 1: เว็บไซต์ (ใส่รูปภาพสัดส่วนใหม่ที่ขยายขนาดกรอบรองรับแล้ว) -->
+                <!-- ผลงานที่ 1: เว็บไซต์ -->
                 <div class="portfolio-card" data-category="web">
                     <div class="portfolio-mockup">
                         <div class="mock-browser">
@@ -744,7 +832,7 @@
                     </div>
                 </div>
 
-                <!-- ผลงานที่ 2: บอทดิสคอร์ด (ติดตั้งรูปกราฟิกจำลองการทำงานของบอท FlexDas แท้จริงแบบเรียลไทม์) -->
+                <!-- ผลงานที่ 2: บอทดิสคอร์ด -->
                 <div class="portfolio-card" data-category="bot">
                     <div class="portfolio-mockup">
                         <div class="mock-browser">
@@ -753,7 +841,6 @@
                                 <span class="mock-dot" style="background-color: #555555;"></span>
                                 <span class="mock-dot" style="background-color: #555555;"></span>
                             </div>
-                            <!-- ⚙️ อัปเดตรูปบอทดิสคอร์ดเป็นภาพจำลองการแจ้งโอนสำเร็จของ FlexDas Bot ในกรอบ Discord เรียบร้อยครับ -->
                             <div class="mock-browser-content" style="border: none; padding: 0; overflow: hidden;">
                                 <img src="data:image/svg+xml;utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 150' width='400' height='150'%3E%3Crect width='100%25' height='100%25' fill='%231e1f22'/%3E%3Ccircle cx='28' cy='28' r='16' fill='%230c0c0f' stroke='%238a8a8a' stroke-width='1.5'/%3E%3Ctext x='28' y='32' font-family='sans-serif' font-size='10' font-weight='bold' fill='%23ffffff' text-anchor='middle'%3EFD%3C/text%3E%3Ctext x='52' y='24' font-family='sans-serif' font-size='12' font-weight='bold' fill='%23ffffff'%3EFlexDas Bot%3C/text%3E%3Crect x='126' y='14' width='26' height='12' rx='2' fill='%235865f2'/%3E%3Ctext x='139' y='23' font-family='sans-serif' font-size='8' font-weight='bold' fill='%23ffffff' text-anchor='middle'%3EBOT%3C/text%3E%3Ctext x='160' y='23' font-family='sans-serif' font-size='10' fill='%23949ba4'%3EToday%3C/text%3E%3Crect x='52' y='36' width='330' height='100' rx='3' fill='%232b2d31'/%3E%3Cpath d='M52 36 h 4 v 100 h -4 z' fill='%23248046'/%3E%3Ctext x='68' y='52' font-family='sans-serif' font-size='8' font-weight='bold' fill='%23248046' letter-spacing='1'%3EAUTOMATIC TRANSFER SUCCESS%3C/text%3E%3Ctext x='68' y='68' font-family='sans-serif' font-size='11' font-weight='bold' fill='%23ffffff'%3E💸 โอนเงินสำเร็จแล้ว (Auto-Pay)%3C/text%3E%3Ctext x='68' y='88' font-family='sans-serif' font-size='8' fill='%23949ba4'%3EMEMBER%3C/text%3E%3Ctext x='68' y='102' font-family='sans-serif' font-size='10' font-weight='bold' fill='%23ffffff'%3E@Mokro%3C/text%3E%3Ctext x='170' y='88' font-family='sans-serif' font-size='8' fill='%23949ba4'%3EAMOUNT%3C/text%3E%3Ctext x='170' y='102' font-family='sans-serif' font-size='11' font-weight='bold' fill='%23248046'%3E150.00 THB%3C/text%3E%3Ctext x='270' y='88' font-family='sans-serif' font-size='8' fill='%23949ba4'%3ESTATUS%3C/text%3E%3Ctext x='270' y='102' font-family='sans-serif' font-size='10' font-weight='bold' fill='%23248046'%3ESUCCESS 🟢%3C/text%3E%3Cline x1='68' y1='114' x2='368' y2='114' stroke='%233f4248' stroke-width='0.5'/%3E%3Ctext x='68' y='126' font-family='sans-serif' font-size='8' fill='%23949ba4'%3EFLEXDAS AUTO-GATEWAY • VERIFIED%3C/text%3E%3C/svg%3E" style="width: 100%; height: 100%; object-fit: cover; object-position: top;" alt="ตัวอย่างผลงานบอทดิสคอร์ด">
                             </div>
@@ -769,7 +856,7 @@
                     </div>
                 </div>
 
-                <!-- ผลงานที่ 3: ระบบหลังบ้าน (ติดตั้งรูปกราฟิกจำลองการบันทึกข้อมูล Query และ Console Log ของเซิร์ฟเวอร์) -->
+                <!-- ผลงานที่ 3: ระบบหลังบ้าน -->
                 <div class="portfolio-card" data-category="system">
                     <div class="portfolio-mockup">
                         <div class="mock-browser">
@@ -778,7 +865,6 @@
                                 <span class="mock-dot" style="background-color: #555555;"></span>
                                 <span class="mock-dot" style="background-color: #555555;"></span>
                             </div>
-                            <!-- ⚙️ อัปเดตรูปหน้าจอการประมวลผลข้อมูลหลังบ้านจำลองที่สอดคล้องกับคอร์ระบบความปลอดภัยเรียบร้อยครับ -->
                             <div class="mock-browser-content" style="border: none; padding: 0; overflow: hidden;">
                                 <img src="data:image/svg+xml;utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 150' width='400' height='150'%3E%3Crect width='100%25' height='100%25' fill='%230c0c12'/%3E%3Ctext x='20' y='25' font-family='monospace' font-size='10' fill='%238a8a8a'%3E%5BSystem%5D Connecting to MongoDB Database...%3C/text%3E%3Ctext x='20' y='42' font-family='monospace' font-size='10' fill='%23248046'%3E%5BDatabase%5D Connection established successfully.%3C/text%3E%3Ctext x='20' y='59' font-family='monospace' font-size='10' fill='%23ffffff'%3E%5BQuery%5D SELECT * FROM transactions WHERE status = 'pending'%3C/text%3E%3Ctext x='20' y='76' font-family='monospace' font-size='10' fill='%238a8a8a'%3E%5BQuery%5D Found 1 pending transaction. ID: TXN_9824%3C/text%3E%3Ctext x='20' y='93' font-family='monospace' font-size='10' fill='%23ffffff'%3E%5BProcess%5D Executing automatic transfer for Mokro...%3C/text%3E%3Ctext x='20' y='110' font-family='monospace' font-size='10' fill='%23248046'%3E%5BSuccess%5D Transfer of 150.00 THB verified and logged.%3C/text%3E%3Ctext x='20' y='127' font-family='monospace' font-size='10' fill='%238a8a8a'%3E%5BSystem%5D Memory utilization: 14.2%25 | Uptime: 724h%3C/text%3E%3C/svg%3E" style="width: 100%; height: 100%; object-fit: cover; object-position: top;" alt="ตัวอย่างผลงานระบบฐานข้อมูล">
                             </div>
@@ -798,7 +884,7 @@
         </div>
     </section>
 
-    <!-- 6. CONTACT (DISCORD ONLY) -->
+    <!-- 7. CONTACT (DISCORD ONLY) -->
     <section class="contact" id="contact">
         <div class="container">
             <div class="contact-box">
@@ -811,14 +897,14 @@
         </div>
     </section>
 
-    <!-- 7. FOOTER -->
+    <!-- 8. FOOTER -->
     <footer>
         <div class="container">
             <p>&copy; 2026 FLEXDAS. FlexDas BY Tbos.</p>
         </div>
     </footer>
 
-    <!-- 8. JAVASCRIPT สำหรับทำงานกับปุ่มสลับประเภทผลงาน -->
+    <!-- 9. JAVASCRIPT สำหรับทำงานกับปุ่มสลับประเภทผลงาน -->
     <script>
         document.addEventListener('DOMContentLoaded', () => {
             const filterButtons = document.querySelectorAll('.filter-btn');
